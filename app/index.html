@@ -4,35 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Gestión - El Sabor Digital</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
     <div class="flex h-screen">
-        <aside class="w-64 bg-white border-r p-4 flex flex-col justify-between">
+        <aside class="w-64 bg-white border-r border-gray-200 p-4 flex flex-col justify-between">
             <div>
                 <div class="flex items-center mb-8">
                     <div class="p-2 bg-indigo-600 text-white rounded-lg"><i data-lucide="utensils-crossed"></i></div>
                     <h1 class="text-xl font-bold ml-3">El Sabor Digital</h1>
                 </div>
                 <nav id="nav-menu">
-                    <a class="nav-link active" data-target="dashboard"><i data-lucide="layout-dashboard" class="pointer-events-none"></i><span class="ml-2 pointer-events-none">Dashboard</span></a>
-                    <a class="nav-link" data-target="comandas"><i data-lucide="clipboard-list" class="pointer-events-none"></i><span class="ml-2 pointer-events-none">Comandas</span></a>
-                    <a class="nav-link" data-target="menu"><i data-lucide="book-open" class="pointer-events-none"></i><span class="ml-2 pointer-events-none">Gestor de Menú</span></a>
+                    <a class="nav-link active" data-target="dashboard"><i data-lucide="layout-dashboard"></i><span class="nav-text">Dashboard</span></a>
+                    <a class="nav-link" data-target="comandas"><i data-lucide="clipboard-list"></i><span class="nav-text">Comandas</span></a>
+                    <a class="nav-link" data-target="menu"><i data-lucide="book-open"></i><span class="nav-text">Gestor de Menú</span></a>
                 </nav>
             </div>
-            <div class="text-center text-sm text-gray-400">
-                <p>&copy; 2025</p>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2025 El Sabor Digital</p>
+                <p>Versión Final</p>
             </div>
         </aside>
 
         <main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+
             <section id="dashboard" class="content-section active">
-                <h2 class="text-3xl font-bold mb-6">Estado de las Mesas</h2>
-                <div id="mesas-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
+                <h2 class="text-3xl font-bold mb-6">Dashboard de Estado</h2>
+                <div id="mesas-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    </div>
             </section>
+
             <section id="comandas" class="content-section">
                 <h2 class="text-3xl font-bold mb-6">Panel de Comandas</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -46,14 +52,22 @@
                     </div>
                 </div>
             </section>
+
             <section id="menu" class="content-section">
                  <div class="flex justify-between items-center mb-6">
                     <h2 class="text-3xl font-bold">Gestor de Menú</h2>
                     <button id="add-category-btn" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">Añadir Categoría</button>
                 </div>
-                <div id="menu-editor" class="space-y-6"></div>
+                <div id="menu-editor" class="space-y-6">
+                    </div>
             </section>
+
         </main>
+    </div>
+
+    <div id="form-modal" class="modal-backdrop">
+        <div class="modal-content">
+            </div>
     </div>
 
     <script src="js/app.js"></script>
